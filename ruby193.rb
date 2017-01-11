@@ -11,10 +11,8 @@ class Ruby193 < Formula
     sha256 "5a72f3d46190b53a7eb71c2bc69f30dd6fba145051ccc5d36090f55fc6b893c3" => :yosemite
   end
 
-  keg_only :provided_by_osx
-
   option :universal
-  option "with-suffix", "Suffix commands with '193'"
+  option "without-suffix", "Do not suffix commands with '193'"
   option "with-doc", "Install documentation"
   option "with-tcltk", "Install with Tcl/Tk support"
 

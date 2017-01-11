@@ -11,12 +11,15 @@ class Ruby187 < Formula
     sha256 "f40e11d81cdae7051600b72ea5511b9995420618a13b65be439f6978e634d8c5" => :yosemite
   end
 
-  keg_only :provided_by_osx
-
   option :universal
-  option "with-suffix", "Suffix commands with '187'"
+  option "without-suffix", "Do not suffix commands with '187' (will become keg-only)"
   option "with-doc", "Install documentation"
   option "with-tcltk", "Install with Tcl/Tk support"
+
+  provided_by_osx = [:mountain_lion, :lion, :snow_leopard].include? MacOS.version.to_sym
+  if provided_by_osx && (build.without? "suffix")
+    keg_only :provided_by_osx
+  end
 
   depends_on "pkg-config" => :build
   depends_on "readline" => :recommended

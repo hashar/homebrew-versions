@@ -11,12 +11,15 @@ class Ruby20 < Formula
     sha256 "fa9ed4084c48d22e47e45e50b207f9fcfd65d7baba05c2158527c577f0232b82" => :yosemite
   end
 
-  keg_only :provided_by_osx
-
   option :universal
-  option "with-suffix", "Suffix commands with '20'"
+  option "without-suffix", "Do not suffix commands with '20' (will become keg-only)"
   option "with-doc", "Install documentation"
   option "with-tcltk", "Install with Tcl/Tk support"
+
+  provided_by_osx = [:sierra, :el_capitan, :yosemite, :mavericks].include? MacOS.version.to_sym
+  if provided_by_osx && (build.without? "suffix")
+    keg_only :provided_by_osx
+  end
 
   depends_on "pkg-config" => :build
   depends_on "readline" => :recommended

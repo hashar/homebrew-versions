@@ -24,7 +24,7 @@ class Ruby23 < Formula
   end
 
   option :universal
-  option "with-suffix", "Suffix commands with '23'"
+  option "without-suffix", "Do not suffix commands with '23'"
   option "with-doc", "Install documentation"
   option "with-tcltk", "Install with Tcl/Tk support"
 

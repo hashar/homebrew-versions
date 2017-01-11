@@ -11,10 +11,8 @@ class Ruby22 < Formula
     sha256 "40ac8d934a9c4335f12af89d2237439bb24a2069df70a40e068723426aad22be" => :yosemite
   end
 
-  keg_only :provided_by_osx
-
   option :universal
-  option "with-suffix", "Suffix commands with '22'"
+  option "without-suffix", "Do not suffix commands with '22'"
   option "with-doc", "Install documentation"
   option "with-tcltk", "Install with Tcl/Tk support"
 

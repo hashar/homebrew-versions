@@ -10,10 +10,8 @@ class Ruby21 < Formula
     sha256 "39bee040951dded7f2d07fd9810bf57b1ff1c9b756b34b0fec9a330b78e7b149" => :yosemite
   end
 
-  keg_only :provided_by_osx
-
   option :universal
-  option "with-suffix", "Suffix commands with '21'"
+  option "without-suffix", "Do not suffix commands with '21'"
   option "with-doc", "Install documentation"
   option "with-tcltk", "Install with Tcl/Tk support"
 
